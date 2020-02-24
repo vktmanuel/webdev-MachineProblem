@@ -1,0 +1,78 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+    <section class="section">
+        <div class="container">
+            <div>
+                <form class="product-form" action="/add-product" method="POST">
+                    <div class="field">
+                        <label class="label">What you will do today?</label>
+                        you will input here task on what you will do for today
+                        <div class="control">
+                            <input class="input" type="text" name="title">
+                        </div>
+                    </div>
+                    Input the date
+                    <div class="control">
+                            <input class="input" type="date" name="title">
+                        </div>
+                    </div>
+                    Input the time
+                    <div class="control">
+                            <input class="input" type="time" name="title">
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link" type="submit">Add task</button>
+                        </div>
+                    </div>
+
+                <div class="columns is-multiline">
+                 <% if (prods.length > 0) { %>
+                <% for (let products of prods) { %>
+               <div class="column is-full">
+                <div class="card">
+                        <div class="panel-block">
+                            <div class="media">
+                                <div class="media-content">
+                                    <input type= "checkbox" name="todo" value="products.title" onchange="myFunction(this.value)"><p class="panel-block is-active"><%=products.title%></p>
+                                    <script>
+                                    function myFunction(val) {
+                                    alert("You have completed your task");
+                                    }
+                                    </script>
+                                </div>
+                            </div>
+                            
+                                <a class="panel-block is-active" href="products/<%=products.id%>/edit">
+                                    <span class="panel-icon is-right">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </span>
+                                    <span>Edit</span>
+                                </a>
+                                <a class="panel-block is-active" href="products/<%=products.id%>/delete">
+                                    <span class="panel-icon is-right">
+                                        <i class="mdi mdi-delete"></i>
+                                    </span>
+                                    <span>Delete</span>
+                                </a>      
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <% } else { %>
+                <h1>No Task Found!</h1>
+                <% } %>
+            </div>
+                </form>
+            </div>
+       </div>
+    </div>
+    </section>
+    
+</body>
+
+</html>

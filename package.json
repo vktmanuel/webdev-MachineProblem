@@ -1,0 +1,22 @@
+{
+  "name": "webdev-machineproblem",
+  "version": "1.0.0",
+  "description": "Machine problem for it114p",
+  "main": "app.js",
+  "dependencies": {
+    "@mdi/font": "^4.5.95",
+    "bulma": "^0.8.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vince Kirby T. Manuel",
+  "license": "ISC"
+}
